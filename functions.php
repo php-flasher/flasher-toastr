@@ -2,12 +2,13 @@
 
 declare(strict_types=1);
 
+namespace Flasher\Toastr\Prime;
+
 use Flasher\Prime\Container\FlasherContainer;
 use Flasher\Prime\Notification\Envelope;
 use Flasher\Prime\Notification\Type;
-use Flasher\Toastr\Prime\ToastrInterface;
 
-if (!function_exists('toastr')) {
+if (!\function_exists('Flasher\Toastr\Prime\toastr')) {
     /**
      * Creates a Toastr notification or returns the Toastr factory.
      *
@@ -32,7 +33,7 @@ if (!function_exists('toastr')) {
     {
         $factory = FlasherContainer::create('flasher.toastr');
 
-        if (0 === func_num_args()) {
+        if (0 === \func_num_args()) {
             return $factory;
         }
 
